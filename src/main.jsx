@@ -6,11 +6,14 @@ import "./index.css";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Product from "./pages/Product.jsx";
+import Info from "./pages/Info.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <Product />,
+      },
+      {
+        path: "products/:id/info",
+        element: <Info />,
       },
     ],
   },

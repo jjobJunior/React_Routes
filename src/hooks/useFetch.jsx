@@ -48,6 +48,7 @@ export const useFetch = (url) => {
         const res = await fetch(url);
         const json = await res.json();
         setData(json);
+        setMethod(null);
       } catch (error) {
         console.log(error.message);
         setError("Houve algum erro ao carregar os dados!");
