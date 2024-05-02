@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Product from "./pages/Product.jsx";
 import Info from "./pages/Info.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import Search from "./pages/Search.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "products/:id/info",
         element: <Info />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/company",
+        element: <Navigate to="/" />,
       },
     ],
   },
